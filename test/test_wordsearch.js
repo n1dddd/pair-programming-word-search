@@ -20,7 +20,7 @@ describe("#wordSearch()", function() {
     assert.isFalse(result);
   });
 
-  it("should return true if the word is present", function() {
+  it("should return true if the word is present horizontally", function() {
     const result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -35,4 +35,20 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+  
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['T', 'W', 'C', 'F', 'F', 'U', 'A', 'L'],
+      ['R', 'E', 'I', 'N', 'R', 'E', 'L', 'D'],
+      ['A', 'F', 'C', 'F', 'A', 'U', 'A', 'L'],
+      ['N', 'M', 'J', 'T', 'N', 'V', 'R', 'G'],
+      ['H', 'H', 'C', 'S', 'K', 'E', 'R', 'L']]
+      , 'FRANK')
+    assert.isTrue(result);
 });
+  it("should return false if the matrix is an empty array", function() {
+    const result = wordSearch([], 'FRANK')
+    assert.isFalse(result);
+});
+});
+
